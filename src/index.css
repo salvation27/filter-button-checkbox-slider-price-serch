@@ -5,9 +5,66 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-
+* {
+  margin: 0px;
+  padding: 0px;
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.home {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+.home_wrap {
+  display: flex;
+  flex: 1;
+}
+.home_panel_wrap {
+  /* background: red; */
+  flex-basis: 280px;
+}
+.home_list_wrap {
+  /* background: blue; */
+  flex: 1;
+}
+.home_wrap, .home_list_wrap, .home_panel_wrap {
+  overflow-y: auto;
+}
+::-webkit-scrollbar {
+  display: none;
+}
+.filter_bar_wrap {
+  padding: 20px;
+}
+.list_item {
+  width: 100%;
+  height: 150px;
+  border:1px solid red;
+  margin-bottom: 20px;
+}
+.home_list_wrap {
+  /* display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around; */
+  padding: 0px 20px;
+}
+.list_item_categ {
+  background: rgb(8, 143, 177);
+}
+.list_item_cuisine {
+  background: rgb(123, 221, 119);
+}
+.filter_bar_star .Mui-selected {
+  background: #000 !important;
+  color: #fff !important;
+}
+.filter_bar_categ .Mui-selected {
+  background: rgb(29, 4, 173) !important;
+  color: #fff !important;
 }
