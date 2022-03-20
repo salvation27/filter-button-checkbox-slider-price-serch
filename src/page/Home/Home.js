@@ -12,7 +12,7 @@ const Home = () => {
   // остновной массив неизменній
   const [product, setProduct] = useState([]);
   const [filterList, setFilterList] = useState([]);
-  const [resultFound, setResultFound] = useState(true);
+  // const [resultFound, setResultFound] = useState(true);
   const [cusines, setCusines] = useState([
     {
       id: 1,
@@ -113,7 +113,6 @@ const Home = () => {
       );
     }
     setFilterList(updatedList);
-    !updatedList.length ? setResultFound(false) : setResultFound(true)
   };
 
   useEffect(() => {
@@ -143,7 +142,7 @@ const Home = () => {
           />
         </div>
         <div className="home_list_wrap">
-          {  resultFound ?  filterList.map((item) => <List item={item} key={item.id} /> ) : <EmptyList />}
+          {  filterList.length > 0 ?  filterList.map((item) => <List item={item} key={item.id} /> ) : <EmptyList />}
         </div>
       </div>
     </div>
