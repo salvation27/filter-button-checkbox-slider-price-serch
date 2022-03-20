@@ -1,14 +1,7 @@
 import React from 'react'
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup'
-// import { makeStyles } from '@mui/material';
 
-// const useStyles = makeStyles({
-//     root: {
-//         width:'100%',
-//         justifyContent: "space-between"
-//     }
-// })
 const FilterToggle = ({options,value,selectToggle}) => {
   return (
     <>

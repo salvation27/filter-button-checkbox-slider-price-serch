@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import FilterToggle from "../FilterToggle/FilterToggle";
-// import { categoryList} from '../../constants'
-import axios from "axios";
+import { categoryList ,ratingList} from '../../constants'
+// import axios from "axios";
 import CheckboxToggle from "../CheckboxToggle/CheckboxToggle";
 import FilterPrice from "../FilterPrice/FilterPrice";
 const FilterBar = ({
@@ -16,25 +16,37 @@ const FilterBar = ({
   resetFilterStar,
   resetCat,
 }) => {
-  const [categoryList, setCategoryList] = useState([]);
-  const [starList, setStarList] = useState([]);
-  useEffect(() => {
-    axios
-      .get("https://622f13593ff58f023c150843.mockapi.io/test/categoryList")
-      .then((res) => {
-        const categoryList = res.data;
-        setCategoryList(categoryList);
-      });
-  }, [setCategoryList]);
 
-  useEffect(() => {
-    axios
-      .get("https://622f13593ff58f023c150843.mockapi.io/test/starList")
-      .then((res) => {
-        const starList = res.data;
-        setStarList(starList);
-      });
-  }, [setStarList]);
+  // получение категории по api
+
+  // const [categoryList, setCategoryList] = useState([]);
+  // useEffect(() => {
+  //   axios
+  //     .get("https://622f13593ff58f023c150843.mockapi.io/test/categoryList")
+  //     .then((res) => {
+  //       const categoryList = res.data;
+  //       setCategoryList(categoryList);
+  //     });
+  // }, [setCategoryList]);
+
+
+// получение звезд по api
+
+  // const [starList, setStarList] = useState([]);
+
+  // useEffect(() => {
+  //   axios
+  //     .get("https://622f13593ff58f023c150843.mockapi.io/test/starList")
+  //     .then((res) => {
+  //       const starList = res.data;
+  //       setStarList(starList);
+  //     });
+  // }, [setStarList]);
+
+
+
+
+
   return (
     <div className="filter_bar_wrap">
       <div className="filter_bar_categ">
@@ -67,7 +79,7 @@ const FilterBar = ({
         <FilterToggle
           value={selectedRating}
           selectToggle={handleSelectRaitingStar}
-          options={starList}
+          options={ratingList}
         />
       </div>
     </div>
